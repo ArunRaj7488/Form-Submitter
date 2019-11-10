@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+            <%if (error) { %>
+                <div class="alert alert-danger m-2" role="alert">
+                        Error: <%= error %>  
+                </div>    
+            <% } if(success) { %>
+                    <div class="alert alert-success m-2" role="alert">
+                            <%= success %>
+                    </div>
+            <% }%>
+            
+            <h1>Form Submitter</h1>
+
+            <form class=" m-2" action="/user-form" method="POST">
+                <div class="form-group">
+                        <label for="name">Name</label>
+                        <input required class="form-control" name="name" placeholder="Enter Name">
+                </div>    
+                <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" required class="form-control" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                      <label for="phoneNumber">Phone Number</label>
+                      <input type="" class="form-control" required name="phoneNumber" placeholder="Phone Number">
+                </div>
+    
+                <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" class="form-control" required name="dob" placeholder="Enter DOB">
+                  </div>
+    
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Reset</button>
+            </form>
+
+    </div>
+        
+</body>
+</html>
