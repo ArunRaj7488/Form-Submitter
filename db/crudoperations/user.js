@@ -1,7 +1,7 @@
 const mailer = require('../../config/utils/mailer')
 const {User} = require("../models/user");
 
-const dbOperations = {
+module.exports = dbOperations = {
     async createUser(userData){
         const {name, email, phoneNumber, dob} = userData;
         let user = await User.findOne({email});
@@ -20,10 +20,6 @@ const dbOperations = {
     async findByEmail(email){
        let user=await User.findOne({email});
        if(!user) return {error:true,result: `No user found`}
-        return user;
-
-          
+       return user;
     }
 } 
-
-module.exports = dbOperations;

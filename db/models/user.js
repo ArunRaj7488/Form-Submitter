@@ -1,6 +1,5 @@
 const Joi=require('joi');
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const {Schema, model} = require('mongoose');
 
 //creating userSchema
 const UserSchema = new Schema({
@@ -22,10 +21,10 @@ const UserSchema = new Schema({
         type: String
     }
 })
-const User = mongoose.model('users', UserSchema)
+const User = model('users', UserSchema)
 
 //validate schema using joi
-function validateUser(user){
+const validateUser = (user)=>{
     const schema={
         name:Joi.string().required(),
         email:Joi.string().regex(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).required().error(() => {
@@ -43,4 +42,4 @@ function validateUser(user){
       return Joi.validate(user,schema);
 }
 exports.User = User;
-exports.validateUser=validateUser;
+exports.validateUser = validateUser;

@@ -19,7 +19,7 @@ const mailer = {
             to, //sending to user email
             subject, // Subject line
             text: emailText, // plaintext body
-            html : '<h1>'+emailText+'</h1>'
+            html : `<h1> ${emailText} </h1>`
         }
         console.log(mailOptions)
         transporter.sendMail(mailOptions)
