@@ -1,7 +1,7 @@
 # sample
 A MERN app with user registration form
 
--> Working links : https://usersampleapp.herokuapp.com/ , https://usersampleapp.herokuapp.com/user-form
+-> Working links : https://obscure-island-54376.herokuapp.com ,https://obscure-island-54376.herokuapp.com/form
 
 -> React framework for client-side rendering
 
