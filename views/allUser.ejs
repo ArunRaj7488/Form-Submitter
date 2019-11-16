@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">DOB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% allUsers.forEach(function(user, i){ %>
+                <tr>
+                  <th scope="row"><%= i+1 %></th>
+                  <td><%= user.name %></td>
+                  <td><%= user.email %></td>
+                  <td><%= user.phoneNumber %></td>
+                  <td><%= new Date(user.dob).getDate() +"/" + (new Date(user.dob).getMonth() + 1) + "/" +  new Date(user.dob).getFullYear()%></td>
+                </tr>
+                <% }) %>
+
+                
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>
